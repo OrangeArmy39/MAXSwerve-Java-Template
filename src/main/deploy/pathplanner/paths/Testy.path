@@ -1,0 +1,353 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.39784299924834,
+        "y": 5.587752651332275
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.3978429992483408,
+        "y": 5.587752651332275
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.9018362362424472,
+        "y": 5.587752651332275
+      },
+      "prevControl": {
+        "x": 2.389722438712166,
+        "y": 5.578269062489123
+      },
+      "nextControl": {
+        "x": 3.4658337001152377,
+        "y": 5.5981970488114
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.4187317942065913,
+        "y": 5.587752651332275
+      },
+      "prevControl": {
+        "x": 1.3752176681388384,
+        "y": 5.463012156604717
+      },
+      "nextControl": {
+        "x": 1.7320637185803638,
+        "y": 6.485970834537088
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.8782852832881245,
+        "y": 6.935079926139497
+      },
+      "prevControl": {
+        "x": 1.5649533589143523,
+        "y": 6.684414386640479
+      },
+      "nextControl": {
+        "x": 2.1595092919696848,
+        "y": 7.160059133084745
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.9018362362424472,
+        "y": 7.039523900930754
+      },
+      "prevControl": {
+        "x": 2.316949977411406,
+        "y": 7.029079503451629
+      },
+      "nextControl": {
+        "x": 3.4867224950734883,
+        "y": 7.049968298409879
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.3769542042900886,
+        "y": 5.629530241248777
+      },
+      "prevControl": {
+        "x": 1.7748820313773495,
+        "y": 5.891606563758797
+      },
+      "nextControl": {
+        "x": 1.2951479959673124,
+        "y": 5.575652455438587
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.5336201664769746,
+        "y": 4.146425799212922
+      },
+      "prevControl": {
+        "x": 1.3279899420975474,
+        "y": 4.158691461719766
+      },
+      "nextControl": {
+        "x": 1.989122270059487,
+        "y": 4.119255498297474
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.583152022769052,
+        "y": 4.146425799212922
+      },
+      "prevControl": {
+        "x": 2.281268050080585,
+        "y": 4.167946461634323
+      },
+      "nextControl": {
+        "x": 2.8850359954575193,
+        "y": 4.124905136791521
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.3769542042900886,
+        "y": 5.587752651332275
+      },
+      "prevControl": {
+        "x": 2.1170568470102022,
+        "y": 4.845605731525501
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "Shoot",
+      "waypointRelativePos": 0.0,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "ShootSpeaker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "PickUp",
+      "waypointRelativePos": 1.55,
+      "command": {
+        "type": "sequential",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "StopShooting"
+              }
+            },
+            {
+              "type": "named",
+              "data": {
+                "name": "RunIntake"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "StopIt",
+      "waypointRelativePos": 1.5,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "StopShooter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Shoot",
+      "waypointRelativePos": 1.95,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "ShootSpeaker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "PickUp",
+      "waypointRelativePos": 3.25,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "StopShooting"
+              }
+            },
+            {
+              "type": "named",
+              "data": {
+                "name": "RunIntake"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "StopIt",
+      "waypointRelativePos": 4.5,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "StopShooter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Shoot",
+      "waypointRelativePos": 5.15,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "ShootSpeaker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "PickUp",
+      "waypointRelativePos": 6.3,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "StopShooting"
+              }
+            },
+            {
+              "type": "named",
+              "data": {
+                "name": "RunIntake"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "StopIt",
+      "waypointRelativePos": 7.55,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "StopShooter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Shoot",
+      "waypointRelativePos": 8.0,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "ShootSpeaker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 4.75,
+    "maxAcceleration": 2.75,
+    "maxAngularVelocity": 180.0,
+    "maxAngularAcceleration": 180.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 1.5911402711947205,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": null,
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

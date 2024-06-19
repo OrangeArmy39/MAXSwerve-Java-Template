@@ -1,0 +1,103 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 8.32247852790871,
+        "y": 0.7519966184970535
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 8.285163544187833,
+        "y": 0.7519966184970535
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 13.711787627137596,
+        "y": 1.9739911235547662
+      },
+      "prevControl": {
+        "x": 13.0642349834318,
+        "y": 1.8173251613678802
+      },
+      "nextControl": {
+        "x": 14.271596072363831,
+        "y": 2.1094286506256297
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 15.842444712879248,
+        "y": 4.407535736191065
+      },
+      "prevControl": {
+        "x": 14.39589566202353,
+        "y": 3.0236530702048015
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "StopIntake",
+      "waypointRelativePos": 0.15,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "StopShooter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ShootAgain",
+      "waypointRelativePos": 2.0,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "ShootSpeaker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 4.75,
+    "maxAcceleration": 2.75,
+    "maxAngularVelocity": 180.0,
+    "maxAngularAcceleration": 180.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -121.60750224624871,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Usable Auto Paths",
+  "previewStartingState": {
+    "rotation": 179.99999999962787,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

@@ -1,0 +1,68 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 15.16449427488077,
+        "y": 5.5475
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 15.16449427488077,
+        "y": 5.6475
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 14.175352714339711,
+        "y": 4.1233057011579834
+      },
+      "prevControl": {
+        "x": 14.175352714339711,
+        "y": 4.023305701157984
+      },
+      "nextControl": {
+        "x": 14.175352714339711,
+        "y": 4.223305701157983
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 15.16449427488077,
+        "y": 5.5475
+      },
+      "prevControl": {
+        "x": 15.16449427488077,
+        "y": 5.447500000000001
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.75,
+    "maxAcceleration": 2.75,
+    "maxAngularVelocity": 180.0,
+    "maxAngularAcceleration": 180.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 180.0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Usable Auto Paths",
+  "previewStartingState": {
+    "rotation": 180.0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

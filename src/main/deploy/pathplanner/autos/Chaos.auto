@@ -1,0 +1,25 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.5831799958765319,
+      "y": 2.913986896676084
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Chaos"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Competition Autos - DO NOT TOUCH",
+  "choreoAuto": false
+}
