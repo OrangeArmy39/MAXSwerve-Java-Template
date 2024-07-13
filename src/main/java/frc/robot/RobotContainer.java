@@ -56,8 +56,8 @@ public class RobotContainer {
     NamedCommands.registerCommand("StopIntake", m_robotShooter.intakeCommand(0));
     NamedCommands.registerCommand("NotifyEnded", m_robotShooter.notifyEndedCommand());
     NamedCommands.registerCommand("StopShooter", m_robotShooter.stopAllCommand());
-    NamedCommands.registerCommand("LowerShooter", m_robotShooter.shooterDownCommand());
-    NamedCommands.registerCommand("RaiseShooter", m_robotShooter.shooterUpCommand());
+    //NamedCommands.registerCommand("LowerShooter", m_robotShooter.shooterDownCommand());
+    //NamedCommands.registerCommand("RaiseShooter", m_robotShooter.shooterUpCommand());
     NamedCommands.registerCommand("StopShooting", m_robotShooter.stopShooterCommand());
 
     // Configure the button bindings

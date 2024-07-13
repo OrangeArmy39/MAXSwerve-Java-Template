@@ -47,8 +47,8 @@ public class Robot extends TimedRobot {
 
   String autoSelected;
   //private final Compressor c_compressor = new Compressor(PneumaticsModuleType.CTREPCM);
-  private CANSparkMax m_Claw_r = new CANSparkMax(60, MotorType.kBrushless);
-  private CANSparkMax m_Claw_l = new CANSparkMax(61, MotorType.kBrushless);
+  //private CANSparkMax m_Claw_r = new CANSparkMax(16, MotorType.kBrushless);
+  private CANSparkMax m_Claw_l = new CANSparkMax(25, MotorType.kBrushless);
   private final AnalogInput ultrasonic = new AnalogInput(0); 
   //private AnalogInput sonar = new AnalogInput(0);
 
@@ -102,7 +102,7 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
         stick = m_robotContainer.m_driverController;
         stick2 = m_robotContainer.m_driverController2;
-    isUp = !m_robotContainer.m_robotShooter.isShooterUp();
+    //isUp = !m_robotContainer.m_robotShooter.isShooterUp();
     //m_Claw_l.set(-1);
     //m_Claw_r.set(-1);
 
@@ -220,7 +220,7 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
 
-    m_robotContainer.m_robotShooter.compressorSwitch();
+   // m_robotContainer.m_robotShooter.compressorSwitch();
   }
 
   /** This function is called periodically during operator control. */
@@ -258,47 +258,59 @@ public class Robot extends TimedRobot {
     //}
 
     if(stick.getRawButton(1)) {
-      m_Claw_r.set(-.5);
+      //m_Claw_r.set(-.5);
       m_Claw_l.set(-.5);
     } else if(stick.getRawButton(2)) {
-      m_Claw_r.set(.5);
+      //m_Claw_r.set(.5);
       m_Claw_l.set(.5);
       //System.out.println("down");
     } else {
-      m_Claw_r.set(0);
+      //m_Claw_r.set(0);
       m_Claw_l.set(0);
       //System.out.println("not moving");
     }
+    
 
-
-
+    
     var result = camera.getLatestResult();
-    if (result.hasTargets()) {
-      range = PhotonUtils.calculateDistanceToTargetMeters(Units.inchesToMeters(13), Units.inchesToMeters(56.25), Units.degreesToRadians(33), Units.degreesToRadians(result.getBestTarget().getPitch()));
-      Constants.DriveConstants.rotationSpeed = turnController.calculate(result.getBestTarget().getYaw()-5, 2.4);
-      if (Math.abs(range - Units.inchesToMeters(FAR_X)) > .05 && !isUp) {
-        Constants.DriveConstants.driveSpeedX = driveController.calculate(range, Units.inchesToMeters(FAR_X));
-        primed = false;
+    if(camera.isConnected()){
+      System.out.println("Connecterd");
+      if(result.hasTargets()){
+        System.out.println("Has Targetes");
+      } else {
+        System.out.println("No Targetes");
       }
-      else if (Math.abs(range - Units.inchesToMeters(CLOSE_X)) > .15 && isUp) {
-        Constants.DriveConstants.driveSpeedX = driveController.calculate(range, Units.inchesToMeters(CLOSE_X));
-        primed = false;
-      }
-      else {
-        Constants.DriveConstants.driveSpeedX = 0;
-        if(stick.getRawButton(3)){
-          primed = true;
-        }
-        else {
-          primed = false;
-        }
+    } else {
+      System.out.println("Not Connecterd");
+    }
+
+
+    // if (result.hasTargets()) {
+    //   range = PhotonUtils.calculateDistanceToTargetMeters(Units.inchesToMeters(13), Units.inchesToMeters(56.25), Units.degreesToRadians(33), Units.degreesToRadians(result.getBestTarget().getPitch()));
+    //   Constants.DriveConstants.rotationSpeed = turnController.calculate(result.getBestTarget().getYaw()-5, 2.4);
+    //   if (Math.abs(range - Units.inchesToMeters(FAR_X)) > .05 && !isUp) {
+    //     Constants.DriveConstants.driveSpeedX = driveController.calculate(range, Units.inchesToMeters(FAR_X));
+    //     primed = false;
+    //   }
+    //   else if (Math.abs(range - Units.inchesToMeters(CLOSE_X)) > .15 && isUp) {
+    //     Constants.DriveConstants.driveSpeedX = driveController.calculate(range, Units.inchesToMeters(CLOSE_X));
+    //     primed = false;
+    //   }
+    //   else {
+    //     Constants.DriveConstants.driveSpeedX = 0;
+    //     if(stick.getRawButton(3)){
+    //       primed = true;
+    //     }
+    //     else {
+    //       primed = false;
+    //     }
         
-      }
-    }
-      else {
-      Constants.DriveConstants.rotationSpeed /= 5;
-      Constants.DriveConstants.driveSpeedX /= 1.5;
-    }
+    //   }
+    // }
+    //   else {
+    //   Constants.DriveConstants.rotationSpeed /= 5;
+    //   Constants.DriveConstants.driveSpeedX /= 1.5;
+    // }
 
    
     
@@ -347,7 +359,7 @@ public class Robot extends TimedRobot {
       m_robotContainer.m_robotShooter.runShooter(0);
     }
 
-     //arms up
+     /*arms up
     if(stick2.getRawAxis(3)>=.5) {
        m_robotContainer.m_robotShooter.shooterUp();
        isUp = true;
@@ -360,7 +372,7 @@ public class Robot extends TimedRobot {
 
     }
 
-  
+  */
 
     if (primed) {
       p_Lights.set(0.22);

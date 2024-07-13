@@ -17,17 +17,17 @@ public class ShooterSubsystem extends SubsystemBase {
   private CANSparkMax m_ShooterBottom;
   private CANSparkMax m_Intake;
   private CANSparkMax m_Belly;
-  private final DoubleSolenoid p_arms;
-  private final Compressor c_compressor;
+  //private final DoubleSolenoid p_arms;
+  //private final Compressor c_compressor;
   public DigitalInput limitSwitch;
 
   public ShooterSubsystem() {
-    m_ShooterTop = new CANSparkMax(16, MotorType.kBrushless);
-    m_ShooterBottom = new CANSparkMax(25, MotorType.kBrushless);
+    m_ShooterTop = new CANSparkMax(60, MotorType.kBrushless);
+    m_ShooterBottom = new CANSparkMax(61, MotorType.kBrushless);
     m_Intake = new CANSparkMax(15, MotorType.kBrushless);
     m_Belly = new CANSparkMax(17, MotorType.kBrushless);
-    p_arms  = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1);
-    c_compressor = new Compressor(PneumaticsModuleType.CTREPCM);
+    //p_arms  = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1);
+    //c_compressor = new Compressor(PneumaticsModuleType.CTREPCM);
     limitSwitch = new DigitalInput(0);
   }
 
@@ -131,7 +131,7 @@ public Command shooterCommand(double s_Speed, double b_Speed, DriveSubsystem m_r
   }
 
 
-  // lifts up pneumatic shooter arms
+  /*  lifts up pneumatic shooter arms
   public void shooterUp() {
         p_arms.set(Value.kForward);
   }
@@ -164,7 +164,7 @@ public Command shooterCommand(double s_Speed, double b_Speed, DriveSubsystem m_r
       c_compressor.disable();
     }
   }
-
+*/
 
 
 
