@@ -4,13 +4,20 @@
 
 package frc.robot;
 
+import java.util.List;
+
 import org.photonvision.PhotonCamera;
 import org.photonvision.PhotonUtils;
+import org.photonvision.targeting.PhotonTrackedTarget;
+import org.photonvision.targeting.TargetCorner;
 
 import com.revrobotics.CANSparkLowLevel.MotorType;
 import com.revrobotics.CANSparkMax;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.math.geometry.Pose3d;
+import edu.wpi.first.math.geometry.Transform2d;
+import edu.wpi.first.math.geometry.Transform3d;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Joystick;
@@ -79,6 +86,7 @@ public class Robot extends TimedRobot {
   boolean isUp;
 
   boolean spinUp = false;
+  
 
   // double ff = 0.4;
   // double p = 0.25;
@@ -102,6 +110,7 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
         stick = m_robotContainer.m_driverController;
         stick2 = m_robotContainer.m_driverController2;
+        
     //isUp = !m_robotContainer.m_robotShooter.isShooterUp();
     //m_Claw_l.set(-1);
     //m_Claw_r.set(-1);
@@ -226,6 +235,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+
     double rawValue = ultrasonic.getValue();  
 
     if(stick.getRawButton(3)) {
@@ -272,10 +282,25 @@ public class Robot extends TimedRobot {
     
 
     
-    var result = camera.getLatestResult();
+    
     if(camera.isConnected()){
       System.out.println("Connecterd");
+      var result = camera.getLatestResult();
+      // List<PhotonTrackedTarget> targets = result.getTargets();
+      // PhotonTrackedTarget bestTarget = result.getBestTarget();
+
+      // double yaw = bestTarget.getYaw();
+      // double pitch = bestTarget.getPitch();
+      // double area = bestTarget.getArea();
+      // double skew = bestTarget.getSkew();
+  
+      // int targetID = bestTarget.getFiducialId();
+      // double poseAmbiguity = bestTarget.getPoseAmbiguity();
+      // Transform3d bestCameraToTarget = bestTarget.getBestCameraToTarget();
+      // Transform3d alternateCameraToTarget = bestTarget.getAlternateCameraToTarget();
+
       if(result.hasTargets()){
+        //Pose3d robotPose = PhotonUtils.estimateFieldToRobotAprilTag(bestTarget.getBestCameraToTarget(), aprilTagFieldLayout.getTagPose(target.getFiducialId()), cameraToRobot);
         System.out.println("Has Targetes");
       } else {
         System.out.println("No Targetes");
